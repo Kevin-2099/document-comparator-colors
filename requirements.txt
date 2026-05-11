@@ -1,5 +1,4 @@
-gradio
-transformers
-torch
-PyPDF2
+gradio 
+pdfplumber
 python-docx
+odfpy
