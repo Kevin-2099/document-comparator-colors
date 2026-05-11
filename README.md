@@ -1,106 +1,191 @@
-# Comparador de Documentos Visual con Colores
+# 📄 Comparador Visual de Documentos
 
-Este proyecto permite comparar hasta 4 documentos (contratos, informes, propuestas, etc.) y resaltar sus diferencias de forma visual mediante colores, facilitando la revisión y el control de versiones.
+Este proyecto es una herramienta web avanzada para comparar documentos y detectar diferencias de forma visual, precisa y estructurada.
 
-La comparación se realiza siempre tomando el Documento 1 como referencia base.
+Permite comparar hasta **4 documentos o textos simultáneamente**, resaltando cambios con colores, estadísticas, navegación entre diferencias y exportación de resultados.
 
----
+La comparación puede realizarse por **líneas, oraciones o párrafos**, y siempre parte de un esquema de comparación configurable por el usuario.
 
-## Características
+## ✨ Características
 
-- 📄 Comparación múltiple
+### 📂 Comparación múltiple
 
-  - Compara el Documento 1 con el Documento 2.
-  
-  - Opcionalmente compara también con el Documento 3 y el Documento 4.
-  
-  - No se realizan comparaciones directas entre documentos secundarios.
+- Permite comparar hasta 4 documentos o textos
+- Modos de comparación:
+  - Base vs todos
+  - Comparación circular entre documentos
+- Entrada híbrida: archivos o texto pegado
 
-- 🔍 Detección precisa de cambios
+### 🧠 Comparación inteligente
 
-  - Comparación línea por línea.
-  
-  - Resaltado palabra por palabra dentro de las líneas modificadas.
+- Comparación por:
+  - Línea
+  - Oración
+  - Párrafo
+- Detección precisa de cambios con diffs avanzados
+- Resaltado palabra por palabra en cambios internos
 
-- 🎨 Resaltado visual con colores
+### 🎨 Resaltado visual
 
-  - 🟥 Fondo rojo → texto eliminado o modificado del Documento 1.
-  
-  - 🟩 Fondo verde → texto insertado o modificado en el documento comparado.
+- 🟥 Eliminaciones
+- 🟩 Inserciones
+- 🟨 Modificaciones
 
-- 👁️ Opción para ocultar texto sin cambios
+Vista lado a lado tipo editor de diferencias
 
-  - Permite visualizar únicamente las diferencias, ideal para documentos extensos.
+### 📊 Estadísticas automáticas
 
-- 📂 Compatibilidad de formatos
+- Porcentaje de similitud
+- Líneas añadidas
+- Líneas eliminadas
+- Líneas modificadas
+- Líneas iguales
 
-  - PDF
-  
-  - DOCX
-  
-  - TXT
+### 🔖 Navegación entre cambios
 
-- 🌍 Independiente del idioma
+- Enlaces directos a cada diferencia
+- Navegación rápida dentro del documento
 
-  - Funciona con cualquier idioma, ya que compara texto, no significado.
+### 🕒 Historial de sesión
 
-- 🌐 Interfaz web sencilla
-  - Construida con Gradio.
-  
-  - Lista para uso local o despliegue en Hugging Face Spaces.
+- Guarda comparaciones realizadas
+- Muestra:
+  - Hora
+  - Documentos usados
+  - Similitud promedio
 
----
+### 💾 Exportación
 
-## Cómo usar
+- Exportación a HTML
+- Incluye estilos, colores y estructura completa
+- Archivo listo para compartir o archivar
 
-1. Subir Documento 1
-→ Documento base de comparación.
+### ⚙️ Opciones avanzadas
 
-2. Subir Documento 2
-→ Comparado con el Documento 1.
+- Ocultar líneas sin cambios
+- Ignorar mayúsculas/minúsculas
+- Ignorar espacios en blanco
+- Ajuste de contexto alrededor de cambios
 
-3. (Opcional) Subir Documento 3 y/o Documento 4
-→ También comparados con el Documento 1.
+### 📂 Formatos soportados
 
-4. (Opcional) Activar “Ocultar líneas sin cambios”
-→ Para ver solo las diferencias.
+- PDF (pdfplumber)
+- DOCX
+- ODT
+- TXT
+- Texto pegado directamente
 
-Visualizar las diferencias resaltadas por colores.
+### 🌍 Independiente del idioma
 
----
-## Librerías usadas
+- Funciona con cualquier idioma
+- Basado en comparación de texto, no significado
 
-gradio → interfaz web
+### 🌐 Interfaz web moderna
 
-PyPDF2 → lectura de PDFs
+- Construida con Gradio Blocks
+- Diseño por pestañas
+- Vista lado a lado profesional
+- Interfaz interactiva y responsive
 
-python-docx → lectura de DOCX
+## 🚀 Cómo usar
 
-difflib.SequenceMatcher → detección de diferencias línea por línea
+### 1. Cargar documentos o texto
 
-html → escapar caracteres especiales en el texto
+Cada entrada permite:
 
-## Uso recomendado
+- Subir archivo (PDF, DOCX, ODT, TXT)
+- O pegar texto manualmente
 
-- Revisión de contratos y anexos
+Si ambos están presentes, el texto pegado tiene prioridad.
 
-- Comparación de versiones de informes
+### 2. Configurar opciones
 
-- Revisión de propuestas y documentos técnicos
+Opcionalmente puedes:
 
-- Ideal para:
+- Elegir granularidad (línea, oración o párrafo)
+- Activar ocultar coincidencias
+- Ignorar mayúsculas
+- Ignorar espacios
+- Seleccionar modo de comparación
 
-  - Equipos legales
-  
-  - Gestores documentales
-  
-  - Equipos de revisión y auditoría
+### 3. Ejecutar comparación
 
----
-## Licencia
+Presiona:
 
-MIT License
+🔍 Comparar
 
----
+### 4. Revisar resultados
+
+- Diferencias resaltadas por colores
+- Estadísticas automáticas
+- Navegación entre cambios
+- Historial de sesión
+
+### 5. Exportar
+
+En la pestaña de exportación:
+
+💾 Genera un archivo HTML descargable
+
+## 📦 Librerías principales
+
+- gradio → interfaz web
+- pdfplumber → lectura avanzada de PDF
+- python-docx → lectura de DOCX
+- odfpy → soporte ODT
+- difflib → detección de diferencias
+- html / re → procesamiento de texto
+- tempfile → exportación HTML
+
+## 💼 Casos de uso
+
+### 📑 Revisión de contratos
+
+- Contratos legales
+- Anexos
+- Versiones de cláusulas
+
+### 📊 Auditoría y control
+
+- Versionado de documentos
+- Revisiones internas
+- Control de cambios
+
+### 🧾 Gestión documental
+
+- Informes técnicos
+- Propuestas comerciales
+- Documentación corporativa
+
+## 👥 Ideal para
+
+- Abogados
+- Equipos legales
+- Consultores
+- Auditores
+- Equipos de compliance
+- Gestión documental
+
+## ⚠️ Notas importantes
+
+- Comparación basada en texto, no significado
+- No interpreta contexto legal o semántico
+- La similitud es estructural
+- El rendimiento depende del tamaño de los documentos
+
+## 📄 Licencia
+
+Este proyecto se distribuye bajo una **licencia propietaria con acceso al código (source-available)**.
+
+El código fuente se pone a disposición únicamente para fines de **visualización, evaluación y aprendizaje**.
+
+❌ No está permitido copiar, modificar, redistribuir, sublicenciar, ni crear obras derivadas del software o de su código fuente sin autorización escrita expresa del titular de los derechos.
+
+❌ El uso comercial del software, incluyendo su oferta como servicio (SaaS), su integración en productos comerciales o su uso en entornos de producción, requiere un **acuerdo de licencia comercial independiente**.
+
+📌 El texto **legalmente vinculante** de la licencia es la versión en inglés incluida en el archivo `LICENSE`. 
+
+Se proporciona una traducción al español en `LICENSE_ES.md` únicamente con fines informativos. En caso de discrepancia, prevalece la versión en inglés.
+
 ## Autor
-Kevin
+Kevin-2099
